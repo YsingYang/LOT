@@ -1,6 +1,50 @@
 # depslib dependency file v1.0
-1532696505 source:/home/ysing/Project/C++/LOT/main.cc
-	<ev.h>
-	<ev.h>
-	<stdio.h>
+1532775454 source:/home/ysing/Project/C++/LOT/main.cc
+	"./include/LOT_Log.h"
+	"./include/FileManager.h"
+	<iostream>
+	<memory>
+	<string.h>
+	<vector>
+
+1532762650 /home/ysing/Project/C++/LOT/include/LOT_Log.h
+	<cstdint>
+	<string>
+
+1532762736 source:/home/ysing/Project/C++/LOT/include/LOT_Log.cc
+	"./LOT_Log.h"
+	<fstream>
+	<iostream>
+
+1532770203 source:/home/ysing/Project/C++/LOT/include/Serialize.cc
+	<assert.h>
+	<string.h>
+	"Serialize.h"
+	"LOT_Log.h"
+
+1532770699 /home/ysing/Project/C++/LOT/include/Serialize.h
+	<cstdint>
+	"FileData.h"
+
+1532774506 source:/home/ysing/Project/C++/LOT/include/FileManager.cc
+	"FileManager.h"
+	"LOT_Log.h"
+
+1532774371 /home/ysing/Project/C++/LOT/include/FileManager.h
+	<boost/core/noncopyable.hpp>
+	<memory>
+	<iostream>
+	"Serialize.h"
+
+1532766543 source:/home/ysing/Project/C++/LOT/include/Buffer.cc
+	<stdlib.h>
+	"Buffer.h"
+
+1532766789 /home/ysing/Project/C++/LOT/include/Buffer.h
+
+1532771452 /home/ysing/Project/C++/LOT/include/FileData.h
+	<string>
+
+1532771458 source:/home/ysing/Project/C++/LOT/include/FileData.cc
+	"FileData.h"
 

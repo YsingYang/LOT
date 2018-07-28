@@ -1,28 +1,30 @@
-#include "LOT_Log.h"
+#include "./LOT_Log.h"
 #include <fstream>
+#include <iostream>
 
-Log::logPath_ = "logFile"; //暂时不考虑跨平台
+using namespace std;
+using namespace LOT;
 
-static void LOT_Log::SetPath(const char* path) {
-    logPath_ = path;
+
+std::string LOT::Log::logPath_ = "file.txt"; //暂时不考虑跨平台
+
+void Log::LogInit(const char* path, int length){
+    logPath_ = string(path, length);
 }
 
-static int LogWrite(int64_t id, const char* data, int length){
+void Log::LogInit(string& path){
+    swap(logPath_, path);
+}
+
+int Log::LogWrite(int64_t id, const char* data, int length){
+    ofstream outputStream(logPath_, ofstream::out | ofstream::app);
     if(outputStream.is_open()) {
-        ofstream outputStream(path);
-        outputStream<<"id : "<<id<<" "<<data<<std::endl;
+        outputStream<<"id : "<<id<<" "<<data<<endl;
         outputStream.close();
+        return LOG_WRITE_ACCEPT; // No exception
     }
     else{
-        std::cout<<"Open LogFile error"<<std::endl;
-        ofstream outputStream(serious_Log_);
-        if(outputStream.is_open()) {
-            ofstream outputStream(path);
-            outputStream<<"id : "<<id<<" "<<data<<std::endl;
-            outputStream.close();
-        }
-        else {
-            std::cout<<"Serious LogFile error"<<std::endl;
-        }
+        cout<<"Open LogFile error"<<endl;
+        return LOG_WRITE_ERROR;
     }
 }

@@ -31,8 +31,13 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="include/FileManager.cc" />
+		<Unit filename="include/FileManager.h" />
 		<Unit filename="include/LOT_Log.cc" />
 		<Unit filename="include/LOT_Log.h" />
+		<Unit filename="include/Serialize.cc" />
+		<Unit filename="include/Serialize.h" />
+		<Unit filename="main.cc" />
 		<Extensions>
 			<code_completion />
 			<debugger />
